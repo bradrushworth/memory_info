@@ -1,45 +1,38 @@
-group 'com.mrololo.memory_info'
-version '1.0-SNAPSHOT'
-
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:9.0.0'
-    }
+plugins {
+    id "com.android.library"
+    id "kotlin-android"
+    //id "dev.flutter.flutter-gradle-plugin"
 }
 
-rootProject.allprojects {
+group = 'com.mrololo.memory_info'
+version = '1.0-SNAPSHOT'
+
+allprojects {
     repositories {
         google()
         mavenCentral()
     }
 }
-
-apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 36
 
-    namespace 'com.mrololo.memory_info'
+    namespace = 'com.mrololo.memory_info'
 
+    defaultConfig {
+        minSdkVersion 23
+    }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17
     }
 
     sourceSets {
-        main.java.srcDirs += 'src/main/java'
         main.kotlin.srcDirs += 'src/main/kotlin'
     }
-    defaultConfig {
-        minSdkVersion 21
-    }
-}
-
-dependencies {
 }
