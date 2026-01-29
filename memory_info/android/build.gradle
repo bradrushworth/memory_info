@@ -2,15 +2,15 @@ group 'com.mrololo.memory_info'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.8.0'
+    //ext.kotlin_version = '2.3.0'
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
         classpath 'com.android.tools.build:gradle:8.3.1'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        //classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
@@ -49,5 +49,5 @@ android {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
